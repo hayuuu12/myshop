@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+</head>
+<body>
+    <div id="demo"></div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        //const txt = '{"name" : "John", "age":30, "city":"New York"}';
+        //const obj = JSON.parse(txt);
+        //document.getElementById("demo").innerHTML = obj.name + ", " + obj.age + ", " + obj.city;
+
+        //const txt = {name : "John", age:30, city:"New York"};
+        //const obj = JSON.stringify(txt);
+        //document.getElementById("demo").innerHTML = obj;
+
+        $(function(){
+          /*
+            $.get() => 파라미터 창을 통해 데이터를 보내거나 가져옴.
+                       - 보안에 취약
+                       - 크기가 한계가 있음
+                       - 다른 사이트(다른 서버)와 통신
+            $.post() => body를 통해 들어오기 때문에 
+                       - 보안에 좋음
+                       - 크기에 한계가 없음
+                       - 다른 사이트(다른서버)와 통신은 불가능
+            $.ajax() => 내부 데이터 옵션을 통해 get, post를 설정할 수 있음
+              type : GET 또는 POST
+              url : ajax로 요청할 대상 url
+              async : 동기, 비동기 
+              dataType : 받아올 데이터의 자료형 지정
+              data : 요청을 보낼 데이터 지정
+              success : 요청성공시
+              error(xhr, status, error) : 요청실패시 실행할 이벤트
+              complete : 요청완료시
+          */
+          $.ajax({
+              url: "./data/db.json", 
+              success : function(rs){
+                let li = "";
+                for(let i = 0; i < rs.category.length; i++){
+                  li += "<li>" + rs.category[i] + "</li>";
+                }
+                $("#demo").html("<ol>" + li + "</ol>");
+              }
+          })
+        });
+
+    </script>
+
+</body>
+</html>

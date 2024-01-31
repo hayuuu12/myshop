@@ -168,11 +168,61 @@ input.search{
     text-decoration: none;
 }
 
-/************************* brand ************************************/
+/************************* brand *****************************/
 .brand{
     font-size: 30px;
     font-weight: 600;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-family: 'Roboto Slab' , serif;
+    font-weight: 400;
+}
+
+/********************* GLOBAL NAV ***************************/
+nav.global{
+    box-shadow:0 10px 10px 0 rgba(0,0,0,0.05) ;
+}
+.category{
+    line-height: 40px;
+    display: block;
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.category:hover{
+    color: var(--white-color);
+    background-color: var(--dark-color);
+}
+ul.pr-category{
+    width: 60%;
+    text-transform: uppercase;
+    line-height: 50px;
+}
+ul.pr-category>li{
+    position: relative;
+}
+ul.pr-category>li>ul.sub-cate{
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgb(222,226,230);
+    background: var(--white-color);
+    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    left: -10px;
+    display: none;
+}
+ul.sub-cate>li{
+    white-space: nowrap;
+    padding: 0px 20px;
+    line-height: 30px;
+}
+ul.global-nav{
+    width: 23%;
+    text-transform: uppercase;
+    line-height: 50px;
 }
