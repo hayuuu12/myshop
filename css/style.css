@@ -11,7 +11,7 @@ a:hover{
     color: var(--dark-color);
 }
 .container-max{
-    width: 1600px;
+    width: 1580px;
     max-width: 1440px;
     padding-left: 80px;
     padding-right: 80px;
@@ -44,7 +44,6 @@ a:hover{
     text-align: center;
 }
 .mem{
-    position: relative;
     font-weight: 700;
 }
 .mem:hover .subnav{
@@ -170,7 +169,7 @@ input.search{
 
 /************************* brand *****************************/
 .brand{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 600;
     text-align: center;
     margin-top: 30px;
@@ -184,16 +183,54 @@ nav.global{
     box-shadow:0 10px 10px 0 rgba(0,0,0,0.05) ;
 }
 .category{
-    line-height: 40px;
+    line-height: 50px;
     display: block;
     font-size: 1.5em;
     width: 50px;
     height: 50px;
     text-align: center;
+    position: relative;
 }
 .category:hover{
-    color: var(--white-color);
     background-color: var(--dark-color);
+}
+.category:hover>a{
+    color: var(--white-color);
+}
+.category-subnav{
+    position: absolute;
+    width: 1310px;
+    height: 600px;
+    z-index: 101;
+    background: #fff;
+    border: 1px solid var(--gray-dark-color);
+    overflow-y:auto;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.global-nav-view{
+    list-style-type: none;
+    font-size: 16px;
+    text-align: left;
+    line-height: 40px;
+    width: 140px;
+    height: 598px;
+    background-color: rgba(0,0,0,0.05);
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+}
+.global-nav-view li{
+    padding-left: 30px;
+    transition: all 300ms;
+}
+.global-nav-view li:hover{
+    background-color: var(--gray-color);
+}
+.global-nav-view li:hover a{
+    color:#000;
 }
 ul.pr-category{
     width: 60%;
