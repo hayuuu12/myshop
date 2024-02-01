@@ -21,6 +21,44 @@ $(function(){
             }
           }
           $('.pr-category').html(link);
+          $('.category-subnav-view').html(link);
         }
-    })
-});
+    });
+
+    $.get("data/slide.json", function(rs){
+        const img = rs.carousel;
+        let imgs = '';
+        for(let i = 0; i < img.length; i++){
+            imgs += `<div class="text-center"><img src="images/${img[i]}" alt="${img[i]}"></div> `;
+        }
+        $('.mySlick').prepend(imgs).slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+          autoplay: true,
+          autoplaySpeed: 5000
+        });
+    });
+
+
+    $.get("data/new.json" , function(rs){
+      let newbox = '';
+      const list = rs.newlist;
+      for(let i = 0 ; i < list.length; i++){
+        newbox += `
+        <div class="col-md-3">
+            <div class="card">
+                <a href="#" class="card-img"><img src="images/${(list[i].img)}" class="card-img-top" alt="${(list[i].num)}"></a>
+                <a href="#" class="card-body">
+                    <h5 class="mt-4">${(list[i].title)}</h5>
+                    <p>${(list[i].text)}</p>
+                </a>
+            </div>
+        </div>`;
+      }
+    });
+
+
+}); //jq

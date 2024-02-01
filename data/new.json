@@ -1,0 +1,16 @@
+{
+    "newlist": [
+        {"num":1 , "title" : "black label", "txt":"프리미엄 라인, 블랙라벨", "img":"./images/pd/001.jpg"},
+        {"num":2 , "title" : "new hotdeal", "txt":"허리는 밴드거부감 없이!!", "img":"./images/pd/002.jpg"},
+        {"num":3 , "title" : "office look", "txt":"네크라인과 아랫단은 패턴을 담아 최강 아이템으로", "img":"./images/pd/003.jpg"},
+        {"num":4 , "title" : "outer", "txt":"학교교육 및 평생교육을 포함한 교육제도와 그 운영, 교육재정 및 교원의 지위에 관한 기본적인 사항은 법률로 정한다.", "img":"./images/pd/004.jpg"},
+        {"num":5 , "title" : "pants", "txt":"국가안전보장회의는 대통령이 주재한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.", "img":"./images/pd/005.jpg"},
+        {"num":6 , "title" : "slacks", "txt":"대통령후보자가 1인일 때에는 그 득표수가 선거권자 총수의 3분의 1 이상이 아니면 대통령으로 당선될 수 없다.", "img":"./images/pd/006.jpg"},
+        {"num":7 , "title" : "dress", "txt":"모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며", "img":"./images/pd/007.jpg"},
+        {"num":8 , "title" : "accessories", "txt":"모든 국민은 고문을 받지 아니하며, 형사상 자기에게 불리한 진술을 강요당하지 아니한다.", "img":"./images/pd/008.jpg"},
+        {"num":9 , "title" : "black label", "txt":"행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다.", "img":"./images/pd/009.jpg"},
+        {"num":10 , "title" : "hot deal", "txt":"대통령은 조약을 체결·비준하고, 외교사절을 신임·접수 또는 파견하며, 선전포고와 강화를 한다.", "img":"./images/pd/010.jpg"},
+        {"num":11 , "title" : "event sale", "txt":"국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다.", "img":"./images/pd/011.jpg"},
+        {"num":12 , "title" : "office look", "txt":"위원은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다.", "img":"./images/pd/012.jpg"}
+    ]
+}
