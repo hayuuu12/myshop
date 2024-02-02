@@ -25,7 +25,7 @@ a:hover{
     }
 }
 
-/********************** TOP NAVIGATION *****************************/
+/*############################# TOP NAVIGATION #############################*/
 .top ul.nav{
     text-transform: uppercase;
     font-size: 12px;
@@ -167,7 +167,7 @@ input.search{
     text-decoration: none;
 }
 
-/************************* brand *****************************/
+/*############################# brand #############################*/
 .brand{
     font-size: 40px;
     font-weight: 600;
@@ -178,7 +178,7 @@ input.search{
     font-weight: 400;
 }
 
-/********************* GLOBAL NAV ***************************/
+/*############################# GLOBAL NAV #############################*/
 nav.global{
     box-shadow:0 10px 10px 0 rgba(0,0,0,0.05) ;
 }
@@ -298,7 +298,7 @@ ul.global-nav{
     line-height: 50px;
 }
 
-/********************* HERO ***************************/
+/**############################# HERO #############################*/
 .hero{
     overflow: hidden;
 }
@@ -390,6 +390,31 @@ ul.global-nav{
 }
 .list-act-color{
     fill:var(--gray-dark-color);
+}
+.sort li:hover,
+.sort li.act{
+    background: #ddd;
+}
+.sort li:hover a,
+.sort li.act a{
+    font-weight: bold;
+}
+h5 span{
+    margin-left: 15px;
+}
+p.desc{
+    margin-bottom: 0.3rem;
+}
+p.price span{
+    margin-right:1rem;
+}
+span.or{
+    text-decoration: line-through;
+}
+.price span:not(.or){
+    color:var(--dark-color);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 /*######################### SERVICE #############################*/
