@@ -65,8 +65,14 @@ $(function(){
 
     $('.news').click(function(e){
         e.preventDefault();
+        let thenew;
+        if($('header').css('position', 'fixed')){
+            thenew = $('#new').offset().top - 100;
+        }else{
+            thenew = $('#new').offset().top - 200;
+        }
         $('html, body').animate({
-            scrollTop: $('#new').offset().top - 100 + "px"
+            scrollTop: thenew + "px"
         })
     });
 
