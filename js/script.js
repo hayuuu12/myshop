@@ -1,4 +1,26 @@
 $(function(){
+
+    $(window).scroll(function(){
+        let tops = $(window).scrollTop();  
+        if(tops > 0) {
+           $('header').css({
+              'position': 'fixed',
+              'backgroundColor': 'rgba(255,255,255,0.8)',
+              'top': 0,
+              'width': '100%',
+              'zIndex':1000
+           }).addClass("fixed");
+        }else{
+          $('header').css({
+             'position': 'static',
+             'backgroundColor': 'rgba(255,255,255)',
+             'top': 0,
+             'width': '100%'
+          }).removeClass('fixed');        
+        } 
+     });
+
+
     $(document)
     .on("mouseenter", '.pr-category>li', function(){
         $(this).find('.sub-cate').fadeIn();  //sub-cate를 js에 만들었을 때
@@ -31,5 +53,37 @@ $(function(){
             $("#pdlist>div").addClass("col-md-55 mb-5");
         }
     });
+
+
+    // ################# 리모콘 ###################
+    $('.tops').click(function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop:0
+        }, 500);
+    });
+
+    $('.news').click(function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('#new').offset().top - 100 + "px"
+        })
+    });
+
+    $('.hots').click(function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('#list').offset().top - 100 + "px"
+        })
+    });
+
+    $('.bottoms').click(function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(document).height()
+        }, 500);
+    });
+
+    
 
 });//
