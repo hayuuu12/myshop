@@ -608,10 +608,119 @@ footer{
     margin-bottom: 50px;
 }
 .img-thumb-box img{
-    height: 100px;
-    margin-right: 14px;
+    height: 95px;
+    margin-right: 13px;
     cursor: pointer;
 }
 .img-thumb-box img:last-child{
     margin-right: 0;
+}
+.pr-list h1{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+.pr-list h1 span{
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: lowercase;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+.pr-list p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.pr-list h1 span:first-child{
+    margin-left: 30px;
+}
+.ul-pr-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-top:1px solid var(--gray-color);
+    padding-top: 15px;
+}
+.ul-pr-list li{
+    padding: 12px 0;
+    font-size: 14px;
+}
+.ul-pr-list li span{
+    color: #f1730b;
+    font-weight: 600;
+}
+.ul-pr-list li.line{
+    border-top: 1px solid var(--gray-color);
+}
+.title-label{
+    display: inline-block;
+    width:120px;
+    font-weight: 600;
+}
+.colors input[type=radio]{
+    display: none;
+}
+.colors input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    width:20px;
+    height: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+.colors input[type=radio]:checked+label.black::after{
+    content: "검정";
+    display: block;
+    position: absolute;
+    width: 50px;
+    top:25px;
+    left: -3px;
+}
+.colors input[type=radio]:checked+label.pink::after{
+    content: "핑크";
+    display: block;
+    position: absolute;
+    width: 50px;
+    top:25px;
+    left: -3px;
+}
+.colors input[type=radio]:checked+label.blue::after{
+    content: "파랑";
+    display: block;
+    position: absolute;
+    width: 50px;
+    top:25px;
+    left: -3px;
+}
+.colors input[type=radio]:checked+label.red::after{
+    content: "빨강";
+    display: block;
+    position: absolute;
+    width: 50px;
+    top:25px;
+    left: -3px;
+}
+.black{
+    background-color: black;
+}
+.pink{
+    background-color: pink;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+p.selected{
+    margin-left: 120px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+select.size{
+    border: 1px solid var(--gray-color);
+    padding:8px 10px;
+    width: 200px;
 }

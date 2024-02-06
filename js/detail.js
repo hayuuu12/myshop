@@ -4,5 +4,10 @@ $(function(){
         $('.img-box>img').attr('src', src);
     });
 
+    $('.colors input[type=radio]').click(function(){
+        const color = $(this).val();
+        $('.selected').text(color + "색");
+    })
 
-});//
+
+});//JQ
