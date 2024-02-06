@@ -3,6 +3,15 @@ body{
     color: var(--primary-color);
     font-size: 16px;
 }
+body::-webkit-scrollbar{
+    width: 8px;
+}
+body::-webkit-scrollbar-track{
+    background-color: pink;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #dd2a7b;
+}
 a,a:link{
     text-decoration: none;
     color:var(--primary-color);
@@ -535,4 +544,74 @@ footer{
     font-size: 0.8em;
     display: block;
     font-style: italic;
+}
+
+/*######################### LIST #############################*/
+.list01{
+    height: 500px;
+    background-color: #f7b5d3;
+}
+.list01>.container{
+    height: 100%;
+    padding-top: 100px;
+    background: url(../images/sample01.png) no-repeat right center;
+    background-size: contain;
+}
+.list01>.container h4{
+    font-size: 30px;
+    color:#c56590;
+    font-weight: 300;
+}
+.list01>.container h1{
+    font-size: 80px;
+    letter-spacing: -5px;
+    color: #dd2a7b;
+    font-weight: 900;
+    line-height: 1;
+}
+.list01>.container p{
+    font-size: 18px;
+    color: rgba(0,0,0,0.0.7);
+    font-weight: 500;
+    margin-top: 30px;
+    width: 800px;
+}
+.pgbox{
+    margin-top: 30px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.pgbox i{
+    line-height: 1;
+}
+.pgbox .page-item.active .page-link{
+    background: #c56590;
+}.page-item .page-link{
+    color: var(--dark-color);
+}
+.page-item.disabled .page-link{
+    color: #ccc;
+}
+
+/*######################### DETAIL #############################*/
+/* 이미지가 작아서 강제로 늘림. 원 쇼핑몰에서는 이미지 크기를 수정할 것 */
+.breadcrumb{
+    background-color: transparent;
+}
+.img-box img{
+    width: 100%;
+}
+.img-thumb-box{
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+.img-thumb-box img{
+    height: 100px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.img-thumb-box img:last-child{
+    margin-right: 0;
 }
