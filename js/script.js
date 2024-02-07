@@ -10,13 +10,15 @@ $(function(){
               'width': '100%',
               'zIndex':1000
            }).addClass("fixed");
+           $('.detail').css('margin-top','200px');
         }else{
           $('header').css({
              'position': 'static',
              'backgroundColor': 'rgba(255,255,255)',
              'top': 0,
              'width': '100%'
-          }).removeClass('fixed');        
+          }).removeClass('fixed');
+          $('.detail').css('margin-top','0px');       
         } 
      });
 
@@ -31,10 +33,15 @@ $(function(){
     // $('.pr-category>li').hover(function(){
     //     $(this).find('.sub-cate').fadeToggle();  //sub-cate를 html에 만들었을 때
     // });
-    $('.category').mouseenter(function(){
-        $(this).find('.category-subnav').css('display', 'flex');
-    }).mouseleave(function(){
-        $(this).find('.category-subnav').css('display', 'none');
+
+    $('.category').click(function(){   
+        //반응형웹으로 만들 때 버튼을 hover로 만들면 모바일에서 작동이 안돼서 안됨. click으로 만들어야함.
+        //hover를 쓰고 싶으면 웹 버튼, 모바일 버튼 따로 만들어야 함.
+        if($(this).find('.category-subnav').css('display')=='none'){
+            $(this).find('.category-subnav').css('display', 'flex');
+        }else{
+            $(this).find('.category-subnav').css('display', 'none');
+        }
     });
 
     $('.listview').click(function(e){
