@@ -353,10 +353,20 @@ ul.global-nav{
     }
     .category-subnav{
         flex-direction: column;
+        height: 780px;
+        width: 768px;
     }
     .category-subnav-view{
         flex-direction: column;
+        width: 100%;
     }
+    .category-subnav-view>li>a{
+        display: block;
+        line-height: 35px;
+        background-color: #eee;
+        font-weight: 700;
+    }
+    
 }
 
 /**############################# HERO #############################*/
