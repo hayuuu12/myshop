@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(function(){
+        $('.click').click(function(){
+            let box = $('.box').html();
+            $('.v').html(box);
+        })
+    });
+  </script>
+</head>
+<body>
+    <div class="box">
+        <h1>안녕하세요</h1>
+        <input type="text" name="how" value="안녕하세요">
+    </div>
+    <button class="click">클릭</button>
+    <div class="v"></div>
+
+</body>
+</html>
