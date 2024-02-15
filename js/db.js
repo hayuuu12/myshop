@@ -31,14 +31,28 @@ $(function(){
         for(let i = 0; i < img.length; i++){
             imgs += `<div class="text-center"><img src="images/${img[i]}" alt="${img[i]}"></div> `;
         }
-        $('.mySlick').prepend(imgs).slick({
+        $('.mySlick').prepend(imgs).not('.slick-initialized').slick({
           dots: true,
           infinite: true,
           speed: 500,
           fade: true,
           cssEase: 'linear',
           autoplay: true,
-          autoplaySpeed: 5000
+          autoplaySpeed: 5000,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                peed: 500
+              }
+            }
+          ]
         });
     });
 

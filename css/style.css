@@ -215,6 +215,9 @@ input.search{
 nav.global{
     box-shadow:0 10px 10px 0 rgba(0,0,0,0.05) ;
 }
+.category-parent{
+    position: relative;
+}
 .category{
     line-height: 50px;
     display: block;
@@ -222,17 +225,19 @@ nav.global{
     width: 50px;
     height: 50px;
     text-align: center;
-    position: relative;
 }
-.category:hover{
+.category:hover,
+.category-act{
     background-color: var(--dark-color);
 }
-.category:hover>a{
+.category:hover>a,
+.category-act>a{
     color: var(--white-color);
 }
 .category-subnav{
     position: absolute;
     width: 1450px;
+    max-width: 100%;
     height: 600px;
     z-index: 101;
     background: #fff;
@@ -359,12 +364,16 @@ ul.global-nav{
     .category-subnav-view{
         flex-direction: column;
         width: 100%;
+    }    
+    .category-subnav-view li{
+        width: 100%;
     }
-    .category-subnav-view>li>a{
-        display: block;
-        line-height: 35px;
-        background-color: #eee;
-        font-weight: 700;
+    .global-nav-view{
+        width: 100%;
+    }
+    .category-subnav-view li a,
+    .global-nav-view a{
+        padding: 8px 10px;
     }
     
 }
@@ -376,6 +385,9 @@ ul.global-nav{
 .mySlick img{
     margin-left: auto;
     margin-right: auto;
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
 }
 .slick-dots {
     bottom: 10px;
@@ -826,4 +838,47 @@ input[type=number].quantity{
 }
 .btn-line.btn-right{
     margin-left: 5px;
+}
+.total-text p{
+    margin: 0;
+    padding: 5px 8px;
+    background: #6c757d;
+    color: #fff;
+    border-radius: 5px;
+}
+.addbox .title-label{
+    width: 60px;
+    margin: 0;
+}
+.remove-order{
+    cursor: pointer;
+}
+
+
+/*######################### DETAIL 상품 상세정보 #############################*/
+.nav-pills{
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: var(--gray-dark-color);
+    justify-content: center;
+}
+.nav-pills li{
+    padding: 5px 30px;
+    position: relative;
+    transition: all 300ms;
+}
+.nav-pills li.active,
+.nav-pills li:hover{
+    background: #eee;
+    border-radius: 5px;
+}
+.nav-pills li:not(:last-child)::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 8px;
+    background: #ddd;
+    position: absolute;
+    right: 0;
+    top: 13px;
 }

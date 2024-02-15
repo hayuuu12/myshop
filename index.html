@@ -46,7 +46,7 @@
 <header>
     <div class="container-max">
         <div class="row">
-            <nav class="top d-flex justify-content-between">
+            <nav class="top d-md-flex d-none justify-content-between">  <!-- d-none => display:none / d-md-flex => md 사이즈가 되면 flex상태로 -->
                 <ul class="nav">
                     <li><a href="#">login</a></li>
                     <li><a href="#">join us</a>
@@ -88,13 +88,13 @@
                     </li>
                 </ul>
             </nav>
-            <h1 class="brand">MY SHOPPING MALL</h1>
+            <h1 class="brand"><a href="#">MY SHOPPING MALL</a></h1>
             
         </div>
     </div><!--/ container-max -->
-    <nav class="global border-top border-bottom">
+    <nav class="global">
         <div class="container-max">
-            <div class="row justify-content-between">
+            <div class="row justify-content-between category-parent">
                 <div class="category">
                    <a href="#"><i class="fa-solid fa-bars"></i></a>
                    <div class="category-subnav">
