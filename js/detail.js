@@ -93,12 +93,13 @@ $(function(){
             for(let i = 0; i < $('.quantity').length; i++){
                 $('.quantity').eq(i).val(quantityArray[i]);
             }
-            $('.sibtitle').eq(totalTextLength).val(optionText); //input type hidden 에 정보 저장
+            $('.subtitle').eq(totalTextLength).val(`${colortxt}-${sizetxt}`); //input type hidden 에 정보 저장
             $('.toptmoney').eq(totalTextLength).val(tmoney);  //가격 저장
             $('.total-text').eq(totalTextLength).html(optionText);  //선택한 색상, 사이즈 밑에 텍스트로 보여주기  //eq는 순서
             $('.quantity').eq(totalTextLength).val(1);
             $('.tomoney').eq(totalTextLength).html(tmoney.toLocaleString()+"원");
-            totalMoney();
+            $('#submit, #cart').attr('disabled', false);
+            totalMoney(delivery);
         }
      });
 
@@ -122,9 +123,9 @@ $(function(){
         //let ind = $('.qup').index(this);   //수량에 따른 액수 표시 (출력)
         //$('.tomoney').eq(ind).html(tmoney + "원");  //수량에 따른 액수 표시 (출력)
 
-        let txt = "총 상품금액(수량) : <strong>"+ ttmoney + "원</strong>("+quantity+"개)";
-        $('.totalmoney').html(txt);
-        totalMoney();
+        // let txt = "총 상품금액(수량) : <strong>"+ ttmoney + "원</strong>("+quantity+"개)";
+        // $('.totalmoney').html(txt);
+        totalMoney(delivery);
     });
 
     //$('#qdown').click(function(){
@@ -142,28 +143,45 @@ $(function(){
         ttmoney = ttmoney.toLocaleString();   //세 자리 콤마
         $(this).parents('.add-opt').find('.tomoney').html(ttmoney + "원"); //수량에 따른 액수 표시 (출력)
 
-        let txt = "총 상품금액(수량) : <strong>"+ ttmoney + "원</strong>("+quantity+"개)";
-        $('.totalmoney').html(txt);
-        totalMoney();
+        
+        totalMoney(delivery);
     });
 
     //삭제 버튼
     $(document).on('click', '.remove-order', function(){
-        totalMoney();
         $(this).parents('.add-opt').remove();  //parents : 조상태그  중 add-opt를 찾아 지우기.
+        if($('.addquantity').children().hasClass('add-opt')){  //addquantity 자식에 add-opt가 있는 지 확인
+            totalMoney(delivery);
+        }else{
+            $('.size').find("option:first").prop("selected", true);  //사이즈 표기 초기화   //prop : 셀렉트 박스에 true, false 줄 수 있는 명령
+            $('#submit, #cart').attr('disabled', true);   //주문하기 버튼, 카트추가 버튼 비활성화 
+            $('.totalmoney').html("");  //총 액수 표기 초기화 
+        }
+    });    
+
+    //본문 상세보기 스크립트
+    $('.nav-pills li').click(function(){
+        $('.nav-pills>li').removeClass('active');
+        $(this).addClass('active');
     });
 
-       
 
 
 });//JQ
 
-function totalMoney(){
+function totalMoney(delivery){
     let tm = 0;
-    $("'input[name='toptmoney[]']").each(function(index){
-        let moneyVal = parseInt($(this).val());
-        let qt = parseInt($(".quantity").eq(index).val());
-        tm += moneyVal*qt;
-        console.log(tm);
-    })
+        $('input[name="toptmoney[]"]').each(function(index){
+            let moneyVal = parseInt($(this).val());  //parseInt 정수타입으로 바꾸기
+            let qt = parseInt($(".quantity").eq(index).val());
+            tm += moneyVal*qt;
+            console.log(tm);
+            //배송정책
+            if(tm > 200000){
+                delivery = 0;   //금액이 20만원 이상이면 배송비 0원 
+            }
+            let txt = "총 상품금액(수량) : <strong>"+ tm.toLocaleString() + "원</strong>+(배송비 :"+delivery.toLocaleString()+"원)";
+            $('.totalmoney').html(txt);
+            
+        });
 }
