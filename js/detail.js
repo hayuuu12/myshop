@@ -50,8 +50,7 @@ $(function(){
                                     </div>
                                     <input type="number"
                                             class="quantity"
-                                            name="quantity"
-                                            value="1"
+                                            name="quantity[]"
                                             readonly>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-line qup" type="button">
@@ -61,6 +60,8 @@ $(function(){
                                 </div>
                                 </li>                            
                             </ul>
+                            <input type="hidden" name="subtitle[]" class="subtitle">
+                            <input type="hidden" name="toptmoney[]" class="toptmoney">
                             <div class="tomoney col text-right"></div>
                             <i class="fa-solid fa-close remove-order"></i>
                         </li>                        
@@ -69,6 +70,11 @@ $(function(){
     $('.size').change(function(){
         totalTextLength = $('.total-text').length;  //순서 
         const oradd = $('.addquantity').html();
+        let quantityArray = [];  //quantity value 값을 따로 읽어서 배열에 저장
+        for(let i = 0 ; i< $('.quantity').length; i++){
+            quantityArray[i] = $('.quantity').eq(i).val();
+        }
+
         opt2 = Number($(this).find("option:selected").data('size'));  
         size = $(this).find("option:selected").val();
         sizetxt = $(this).find("option:selected").text();
@@ -83,9 +89,16 @@ $(function(){
             sizetxt += " " + opt21;
             optionText=`<p>${colortxt}-${sizetxt}</p>`;
             $('.addquantity').html(oradd + opthtml);
+
+            for(let i = 0; i < $('.quantity').length; i++){
+                $('.quantity').eq(i).val(quantityArray[i]);
+            }
+            $('.sibtitle').eq(totalTextLength).val(optionText); //input type hidden 에 정보 저장
+            $('.toptmoney').eq(totalTextLength).val(tmoney);  //가격 저장
             $('.total-text').eq(totalTextLength).html(optionText);  //선택한 색상, 사이즈 밑에 텍스트로 보여주기  //eq는 순서
             $('.quantity').eq(totalTextLength).val(1);
             $('.tomoney').eq(totalTextLength).html(tmoney.toLocaleString()+"원");
+            totalMoney();
         }
      });
 
@@ -98,12 +111,20 @@ $(function(){
             alert("최대수량입니다.");
             quantity = 9;
         }
+        
         //$('.quantity').eq(totalTextLength).val(quantity);
-        $(this).parent().prev().val(quantity); 
-        totalmoney = prprice * quantity;
-        let tmoney = totalmoney.toLocaleString();
-        let txt = "총 상품금액(수량) : <strong>"+ tmoney + "원</strong>("+quantity+"개)";
+        $(this).parent().prev().val(quantity);   //가져온 수량을 input에 넣기
+        tmoney = $(this).parents('.add-opt').find('.toptmoney').val();  //inpuut에 저장된 상품+ 옵션 가져오기
+        let ttmoney = tmoney * quantity;     //(상품가격+옵션)*수량
+        ttmoney = ttmoney.toLocaleString();   //세 자리 콤마
+        $(this).parents('.add-opt').find('.tomoney').html(ttmoney + "원"); //수량에 따른 액수 표시 (출력)
+
+        //let ind = $('.qup').index(this);   //수량에 따른 액수 표시 (출력)
+        //$('.tomoney').eq(ind).html(tmoney + "원");  //수량에 따른 액수 표시 (출력)
+
+        let txt = "총 상품금액(수량) : <strong>"+ ttmoney + "원</strong>("+quantity+"개)";
         $('.totalmoney').html(txt);
+        totalMoney();
     });
 
     //$('#qdown').click(function(){
@@ -116,14 +137,19 @@ $(function(){
         }
         //$('.quantity').eq(totalTextLength).val(quantity);
         $(this).parent().next().val(quantity);
-        totalmoney = prprice * quantity;
-        let tmoney = totalmoney.toLocaleString();
-        let txt = "총 상품금액(수량) : <strong>"+ tmoney + "원</strong>("+quantity+"개)";
+        tmoney = $(this).parents('.add-opt').find('.toptmoney').val();
+        let ttmoney = tmoney * quantity;     //(상품가격+옵션)*수량
+        ttmoney = ttmoney.toLocaleString();   //세 자리 콤마
+        $(this).parents('.add-opt').find('.tomoney').html(ttmoney + "원"); //수량에 따른 액수 표시 (출력)
+
+        let txt = "총 상품금액(수량) : <strong>"+ ttmoney + "원</strong>("+quantity+"개)";
         $('.totalmoney').html(txt);
+        totalMoney();
     });
 
     //삭제 버튼
     $(document).on('click', '.remove-order', function(){
+        totalMoney();
         $(this).parents('.add-opt').remove();  //parents : 조상태그  중 add-opt를 찾아 지우기.
     });
 
@@ -131,3 +157,13 @@ $(function(){
 
 
 });//JQ
+
+function totalMoney(){
+    let tm = 0;
+    $("'input[name='toptmoney[]']").each(function(index){
+        let moneyVal = parseInt($(this).val());
+        let qt = parseInt($(".quantity").eq(index).val());
+        tm += moneyVal*qt;
+        console.log(tm);
+    })
+}
