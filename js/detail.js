@@ -165,10 +165,32 @@ $(function(){
         $(this).addClass('active');
     });
 
+    viewReview();
+
+    //리뷰 슬릭
+    $('#review').show(function(){  //구매후기 선택하면 #review 화면 보이게, 슬릭 만들어지게.
+        $('.review-photo').slick({
+            slidesToShow: 8,
+            slidesToScroll: 1,        
+            centerMode: true
+        });
+    });
 
 
 });//JQ
 
+
+
+//리뷰 퍼센트 보기 함수
+function viewReview(){
+    $('.box-line-color').each(function(){  //each로 루프를 돌린다.
+        let h = $(this).css('height');
+        $(this).html("<span>"+ h +"</span>");
+    });
+}
+
+
+//총액 계산 함수 
 function totalMoney(delivery){
     let tm = 0;
         $('input[name="toptmoney[]"]').each(function(index){

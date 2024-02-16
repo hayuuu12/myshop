@@ -1,5 +1,6 @@
 $(function(){
 
+ // ################# HEADER 스크롤 ###################
     $(window).scroll(function(){
         let tops = $(window).scrollTop();  
         if(tops > 0) {
@@ -24,7 +25,7 @@ $(function(){
         } 
      });
 
-
+ // ################# NAV ###################
     $(document)
     .on("mouseenter", '.pr-category>li', function(){
         $(this).find('.sub-cate').fadeIn();  //sub-cate를 js에 만들었을 때
@@ -36,6 +37,7 @@ $(function(){
     //     $(this).find('.sub-cate').fadeToggle();  //sub-cate를 html에 만들었을 때
     // });
 
+ // ################# SUBNAV ###################
     $('.category').click(function(){   
         //반응형웹으로 만들 때 버튼을 hover로 만들면 모바일에서 작동이 안돼서 안됨. click으로 만들어야함.
         //hover를 쓰고 싶으면 웹 버튼, 모바일 버튼 따로 만들어야 함.
