@@ -177,6 +177,35 @@ $(function(){
     });
 
 
+    //rp 팝업창
+    $('.imgs').click(function(e){
+        e.preventDefault;  // (a 태그 링크)기능 중지
+        const src = $(this).find('img').attr('src');  //getter  클릭한 img의 src값을 가져온다.
+        $('.imgbox').find('img').attr('src', src).attr('alt', src);  //setter  가져온 값으로 대체해준다.
+        $('.rp').fadeIn();
+
+        //event가 발생하지 않는 지역을 선택하면 닫히게.
+        $(document).mouseup(function(e){      // mouseup : 누른 영역
+            if($('.rp').has(e.target).length === 0 ){ // has : target length=0 요소를 갖고 있는 .rp 요소를 선택.
+                                                      // 타켓값과 누른 곳이 일치할 때는 이벤트가 발생하지 않으므로 값이 0이다. 다른 곳(이벤트발생)은 1임.
+                $('.rp').fadeOut();
+            }
+
+            // if($(e.target).hasClass('rp')){
+            //     $('.rp').fadeOut();
+            // }
+
+        });
+
+        //rp-close버튼을 클릭했을 때도 닫히게.
+        $('.rp-close').click(function(){
+            $('.rp').fadeOut();
+        });
+    });
+
+
+
+
 });//JQ
 
 

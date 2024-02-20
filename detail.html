@@ -224,6 +224,7 @@
 
         </div>
     </div>
+
     <!-- 자세히 보기 -->
     <div class="container shop-contents mt-4 pt-4 border-top">
         <ul class="nav nav-pills">
@@ -234,10 +235,33 @@
         </ul>
         
         <div class="tab-content py-5">
+          <!---- 상품상세정보 ---->
           <div id="view" class="tab-pane fade in active show">
             <h3>HOME</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="view-imgs">
+                <img src="images/made_intro.jpg" alt="made_intro">
+                <img src="images/top_1.jpg" alt="top1">
+                <img src="images/top_2.jpg" alt="top2">
+                <p>#FABRIC<br>
+                    난스판 면 소재로 제작되었어요<br><br>
+                    #COLOR<br>
+                    인디고블루 1컬러 진행해요<br><br>
+                    #SIZE<br>
+                    S,M 두 사이즈이며 44반 사이즈의 모델들은<br>
+                    S사이즈 착용시 편하게 잘 맞았어요<br>
+                    자세한 사이즈는 하단의 상세사이즈 참고 후 구매해주세요<br><br>
+                    #TIP<br>
+                    데님 소재의 특성 및 워싱공정 과정으로 인한<br>
+                    물빠짐과 이염을 방지하고자<br>
+                    세탁은 "드라이클리닝"을 추천드립니다.
+                </p>
+                <p style="color: red;">정확한 사이즈는 하단의 size표를 꼭! 참고해주세요</p>
+                <img src="images/top_3.jpg" alt="top3">
+            </div>
           </div>
+          <!---- /상품상세정보 ---->
+
+          <!------ 리뷰 ------->
           <div id="review" class="tab-pane fade">
             <h3>구매 후기</h3>
             <div class="row pb-4 border-bottom">
@@ -321,16 +345,162 @@
                     <a href="#"><img src="images/pd/012.jpg" alt="01"></a>
                 </div>                
             </div>
+
+            <div class="container border-bottom mt-5 pb-3 d-flex">
+                <a href="#" class="btn btn-outline-secondary mr-3">최신순</a>
+                <a href="#" class="btn btn-outline-secondary">별점순</a>
+            </div>
+
+            <ul class="list-group list-group-flush review-list">
+                <!-- loop -->
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-10 py-3 pb-4">
+                            <!-- 별점 -->
+                            <div class="star starin">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-line"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 의무교육은 무상으로 한다. 대통령은 국무회의의 의장이 되고, 국무총리는 부의장이 된다.</p>
+                            <a href="#" class="imgs"><img src="images/pd/017.jpg" alt="17" class="img" /></a>
+                            <a href="#" class="imgs"><img src="images/pd/018.jpg" alt="18" class="img" /></a>
+                            <a href="#" class="imgs"><img src="images/pd/019.jpg" alt="19" class="img" /></a>
+                        </div>
+                        <div class="col-md-2 py-3 text-center">
+                            <span class="badge badge-light">2024.01.01</span>
+                            <br/>
+                            <br/>
+                            <a href="#" class="badge badge-secondary">홍길자</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- /loop -->
+                <li class="list-group-item">Second item</li>
+                <li class="list-group-item">Third item</li>
+                <li class="list-group-item">Fourth item</li>
+            </ul>
+
+            <div class="rp">
+                <i class="ri-close-fill rp-close"></i>
+                <div class="review-popup">
+                    <div class="d-flex">
+                        <div class="imgbox">
+                            <img src="images/pd/031.jpg" alt="031" />
+                        </div>
+
+                        <div class="pdbox">
+                            <ul class="pddetail">
+                                <li class="pdtitle"><a href="#">지그재그 니트 후드 덕다운 롱 패딩</a></li>
+                                <li><label>상품코드</label>P00103EEA</li>
+                                <li><label>할인판매가</label>140,000원</li>
+                                <li><p>밋밋하지 않은 패턴 짜임에 올록볼록 귀여운 자수 포인트가 들어가 입체감이 느껴져 퀄리티가 높은 아이템이에요.</p></li>
+                            </ul>
+                        </div>
+
+                        <div class="rvbox">
+                            <!-- 같은 상품 리뷰 목록 -->
+                            <ul class="list-group list-group-flush same-review-list">
+                                <li class="list-group-item">
+                                    <a href="#">같은 상품 리뷰 목록입니다.</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#">같은 상품 리뷰 목록입니다.</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#">같은 상품 리뷰 목록입니다.</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#">같은 상품 리뷰 목록입니다.</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div> <!-- /d-flex -->
+                </div> <!-- /review-popup -->
+            </div> <!-- /rp -->
+
           </div>
+          <!------ /리뷰 ------->
+
+          <!---- 상품문의 ---->
           <div id="qna" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            <h3>Q&A</h3>
+            <p>게시판 특성에 맞게 카테고리 선택하여 문의 글 남겨주시면 보다 빠른 답변을 받으실 수 있습니다.</p>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><a href="#">사이즈 추가로 인한 기존 사이즈 변경</a></td>
+                    <td>홍길동</td>
+                    <td>2024.01.01</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><a href="#">주문/입금 후 자동 취소</a></td>
+                    <td>홍길자</td>
+                    <td>2024.01.01</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><a href="#">문의드려요</a></td>
+                    <td>김영희</td>
+                    <td>2024.01.01</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><a href="#">문의드려요</a></td>
+                    <td>김철수</td>
+                    <td>2024.01.01</td>
+                  </tr>
+                </tbody>
+              </table>
           </div>
-          <div id="guide" class="tab-pane fade">
-            <h3>Menu 3</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <!---- /상품문의 ---->
+
+          <!---- 구매가이드 ---->
+          <div id="guide" class="tab-pane fade detail-guide">
+            <ul class="df-tab-items">
+                <li class="df-tab-items active">
+                    <a href="#">구매가이드</a>
+                    <h3>상품 결제정보</h3>
+                    <p>고액 결제의 경우 안전을 위해 카드사에서 확인 전화를 드릴 수도 있습니다.<br>
+                        확인 과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.<br><br>
+                        무통장 입금시 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다.<br>
+                        주문시 입력한 입금자명과 실제 입금자가 다르거나 결제가와 입금액이 다를 경우 입금 확인이 되지 않습니다.<br>
+                        주문 후 3일 이내로 미입금시 주문은 자동 취소됩니다.
+                    </p>
+
+                    <h3>배송안내</h3>
+                    <p>ㆍ배송방법 :한진택배<br>
+                        ㆍ배송비 : [의류 한정] 무료배송<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;잡화/악세사리/세일 상품 구매시 5만원이상 무료배송 (5만원 미만 2500원)<br>
+                        ㆍ취소시(품절포함) 최종 결제 금액에 따라 배송비가 발생되거나 사용한 쿠폰이 취소 될 수 있습니다.</p>
+
+                    <h3>교환 및 반품안내</h3>
+                    <p>[교환 및 반품 주소]<br>
+                        - 서울시 종로구 지봉로 37-29, 913호 한진택배 </p>
+                </li>
+
+                <li class="df-tab-items">
+                    <a href="#">의류세탁방법</a>
+                </li>
+            </ul>
           </div>
+          <!---- /구매가이드 ---->
         </div>
+
     </div>
 
 </section>

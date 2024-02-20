@@ -834,7 +834,8 @@ input[type=number].quantity{
 .btn-detail:active{
     background-color: #fdd6e6;
 }
-.btn-line{
+.btn-line.btn-left,
+.btn-line.btn-right{
     width: 48%;
     display: inline-block;
     border: 1px solid var(--gray-dark-color);
@@ -904,16 +905,97 @@ input[type=number].quantity{
     font-weight: 400;
 }
 
+/*######################### 상품상세정보 #############################*/
+.view{
+    margin-left: auto;
+    margin-right: auto;
+}
+.view-imgs{  
+    text-align: center; /* div 안에 있을 때만 사용가능*/
+}
+
 /*######################### 리뷰 #############################*/
 .star{
     margin-top: 20px;
     margin-bottom: 40px;
+}
+.star.starin{
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 .star i{
     font-size: 30px;
     margin: 5px;
     color:#ffb500;
 }
+.review-list .img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.review-list .badge{
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 10px;
+}
+/*************** 리뷰 팝업***************/
+.rp{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 1000;
+}
+.review-popup{
+    position: fixed;
+    width: 900px;
+    height: 550px;
+    background-color: #fff;
+    top:200px;
+    left:calc(50% - 450px);
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2),
+                0 0 15px 0 rgba(0,0,0,0.15);
+}
+.rp-close{
+    font-size: 5em;
+    position: absolute;
+    right: 40px;
+    top:30px;
+    cursor: pointer;
+}
+.review-popup .imgbox{
+    width: 40%;
+}
+.review-popup .imgbox img{
+    max-width: 100%;
+}
+.review-popup .rvbox,
+.review-popup .pdbox{
+    width: 30%;
+}
+ul.pddetail{
+    list-style-type: none;
+    padding: 0;
+}
+ul.pddetail li{
+    padding: 8px 20px;
+}
+ul.pddetail label{
+    font-weight: 600;
+    padding-right: 15px;
+}
+ul.pddetail .pdtitle{
+    font-weight: 600;
+}
+
+
 .shop-contents p.score{
     font-size: 50px;
     font-weight: 700;
@@ -988,4 +1070,37 @@ input[type=number].quantity{
     object-fit: cover;
     width: 150px;
     height: 150px;
+}
+
+/*######################### 상품문의 #############################*/
+#qna{
+    text-align: center;
+}
+#qna p{
+    font-size: 15px;
+}
+
+
+/*######################### 구매가이드 #############################*/
+.detail-guide{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    max-width: 1060px;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    margin: 50px auto 85px;
+    box-sizing: border-box;
+    text-align: left;
+}
+#detail li{
+    list-style-type: none;
+}
+#detail h3{
+    font-size: 19px;
+}
+#detail p{
+    font-size: 14px;
 }
