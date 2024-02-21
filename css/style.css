@@ -1019,7 +1019,6 @@ ul.pddetail .pdtitle{
     position: relative;
 }
 .box-line::after{
-    content: "5점";
     position: absolute;
     width: 30px;
     font-size: 14px;

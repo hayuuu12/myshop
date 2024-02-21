@@ -159,12 +159,30 @@ $(function(){
         }
     });    
 
-    //본문 상세보기 스크립트
-    $('.nav-pills li').click(function(){
-        $('.nav-pills>li').removeClass('active');
-        $(this).addClass('active');
-    });
+    const opt = {
+     infinite: true,
+     slidesToShow: 8,
+     slidesToScroll: 1,
+     centerMode: true,
+     autoplay: true
+    };
 
+  //본문 상세보기 스크립트
+  $('.nav-pills li').click(function(){
+    $('.nav-pills>li').removeClass('active');
+    $(this).addClass('active');
+    const link = $(this).find('a').attr('href');
+    if(link == "#review"){
+       setTimeout(function(){
+         $('.review-photo').not('.slick-initialized').slick(opt);   
+       }, 200);
+    }else{
+        $('.review-photo').slick('unslick');
+    }
+  });
+
+
+    /*
     viewReview();
 
     //리뷰 슬릭
@@ -175,7 +193,7 @@ $(function(){
             centerMode: true
         });
     });
-
+    */
 
     //rp 팝업창
     $('.imgs').click(function(e){
