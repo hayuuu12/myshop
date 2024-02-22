@@ -40,7 +40,7 @@
   <script src="js/slick.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/db.js"></script>
-  <script src="js/detail.js"></script>
+  <script src="js/cart.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -132,10 +132,145 @@
 
 <section id="cart-detail" class="cart-detail">
     <div class="container">
-        <div>
+        <div class="cart-title">
             <h3>장바구니</h3>
         </div>
-        <div></div>
+        <div class="cart-order">
+            <table class="table cart-order-tb">
+                <thead class="thead-dark">
+                    <th><input type="checkbox"></th>
+                    <th>이미지</th>
+                    <th>상품정보</th>
+                    <th>수량</th>
+                    <th>상품구매금액</th>
+                    <th>할인금액</th>
+                    <th>배송구분</th>
+                    <th>배송비</th>
+                    <th>선택</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                      <td><input type="checkbox"></td>
+                      <td><img src="images/pd/001.jpg" alt="1"></td>
+                      <td>엔 플라워 자수 니트 가디건</td>
+                      <td>
+                        <div class="addquantity">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-line qdown" type="button">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <input type="number"
+                                        class="quantity"
+                                        name="quantity[]"
+                                        readonly>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-line qup" type="button">
+                                        <i class="fa-solid fa-chevron-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                      </td>
+                      <td>5000</td>
+                      <td>400</td>
+                      <td>기본배송</td>
+                      <td>3000</td>
+                      <td>
+                        <div class="cart-btnbox">
+                            <button type="button" class="btn btn-primary">주문하기</button>
+                            <button type="button" class="btn btn-outline-secondary">관심상품등록</button>
+                            <button type="button" class="btn btn-outline-secondary">삭제</button>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="images/pd/001.jpg" alt="1"></td>
+                        <td>엔 플라워 자수 니트 가디건</td>
+                        <td>
+                          <div class="addquantity">
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <button class="btn btn-outline-line qdown" type="button">
+                                          <i class="fa-solid fa-chevron-down"></i>
+                                      </button>
+                                  </div>
+                                  <input type="number"
+                                          class="quantity"
+                                          name="quantity[]"
+                                          readonly>
+                                  <div class="input-group-append">
+                                      <button class="btn btn-outline-line qup" type="button">
+                                          <i class="fa-solid fa-chevron-up"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                        </td>
+                        <td>5000</td>
+                        <td>400</td>
+                        <td>기본배송</td>
+                        <td>3000</td>
+                        <td>
+                          <div class="cart-btnbox">
+                              <button type="button" class="btn btn-primary">주문하기</button>
+                              <button type="button" class="btn btn-outline-secondary">관심상품등록</button>
+                              <button type="button" class="btn btn-outline-secondary">삭제</button>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="images/pd/001.jpg" alt="1"></td>
+                        <td>엔 플라워 자수 니트 가디건</td>
+                        <td>
+                          <div class="addquantity">
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <button class="btn btn-outline-line qdown" type="button">
+                                          <i class="fa-solid fa-chevron-down"></i>
+                                      </button>
+                                  </div>
+                                  <input type="number"
+                                          class="quantity"
+                                          name="quantity[]"
+                                          readonly>
+                                  <div class="input-group-append">
+                                      <button class="btn btn-outline-line qup" type="button">
+                                          <i class="fa-solid fa-chevron-up"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                        </td>
+                        <td>5000</td>
+                        <td>400</td>
+                        <td>기본배송</td>
+                        <td>3000</td>
+                        <td>
+                          <div class="cart-btnbox">
+                              <button type="button" class="btn btn-primary">주문하기</button>
+                              <button type="button" class="btn btn-outline-secondary">관심상품등록</button>
+                              <button type="button" class="btn btn-outline-secondary">삭제</button>
+                          </div>
+                        </td>
+                      </tr>
+                </tbody>
+
+            </table>
+            <div>
+                <span>
+                    <strong>선택상품을</strong>
+                    <button type="button" class="btn btn-outline-danger">삭제하기</button> 
+                    <button type="button" class="btn btn-outline-info">해외배송상품 장바구니로 이동</button>
+                </span>                
+            </div>
+        </div>
     </div>
 </section>
 

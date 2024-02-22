@@ -1118,3 +1118,23 @@ ul.pddetail .pdtitle{
     text-align: center;
     margin: 50px 0 50px;
 }
+.cart-order{
+    text-align: center;
+}
+tbody img{
+    width: 100px;
+}
+tbody .cart-btnbox{
+    width: 80px;
+}
+.cart-btnbox>.btn{
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    width: 110px;
+    margin-top: 5px;
+}
+tbody{
+    border-bottom: 1px solid gray;
+}
