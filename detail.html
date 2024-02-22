@@ -41,6 +41,7 @@
   <script src="js/script.js"></script>
   <script src="js/db.js"></script>
   <script src="js/detail.js"></script>
+  <script src="js/cart.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -53,7 +54,7 @@
                     <li><a href="#">join us</a>
                         <div class="msgbox">+10,000 P</div>
                     </li>
-                    <li><a href="#">cart <span>0</span></a></li>
+                    <li><a href="#">cart <span class="cart-count">0</span></a></li>
                     <li><a href="#">order</a></li>
                     <li class="mem"><a href="#">my page</a>
                         <ul class="subnav">
@@ -159,13 +160,16 @@
 
             <!-- 상품정보  -->
             <div class="col-md-6 pl-md-5 pr-list">
-              <form name="detail-form" method="post">
-                <input type="hidden" name="title" id="title" value="지그재그 블라블라">
+              <form name="detail-form" id="detail-form" method="post">
+                <input type="hidden" name="title" id="title" value="지그재그 니트 후드 덕다운 롱 패딩">
                 <input type="hidden" name="prcode" id="prcode" value="P00103EEA" />
                 <input type="hidden" name="prprice" id="prprice" value="140000" />
                 <input type="hidden" name="reserves" id="reserves" value="700" />
                 <input type="hidden" name="delivery" id="delivery" value="5000" />
                 <input type="hidden" name="totalprice" id="totalprice" />
+
+                <!-- 백엔드 작업에서는 삭제할 예정-->
+                <input type="hidden" name="imgid" id="imgid" value="109" />
                 <h1>엔 플라워 자수 니트 가디건
                     <span class="badge badge-primary">hot</span>
                     <span class="badge badge-danger">new</span>
@@ -561,6 +565,34 @@
     <a href="#" class="bottoms"><i class="ri-arrow-down-line"></i></a>
 </div>
 <!-- /remotecontrol -->
+
+<!-- 장바구니 추가 현황 보는 서브창 -->
+<div class="cartview">
+    <div class="cartin">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="d-flex">
+                    <a href="#"><img src="images/pd/013.jpg" alt="013" class="img-thumbnail"></a>
+                    <div class="cart-txt">
+                        <h1>
+                            <a href="#">상품이름이 들어감</a>
+                        </h1>
+                        <p>옵션이 들어감</p>
+                    </div>
+                </div>
+                <div class="c-money">
+                    <span>12</span>250,000원
+                </div>
+            </li>
+        </ul>
+    </div>
+    <button class="btn btn-sm-line">바로구매</button>
+    <button class="btn btn-sm-line">장바구니 이동</button>
+    <div class="cartview-close">
+        <i class="ri-close-line"></i>
+    </div>
+</div>
+<!-- /장바구니 현황 -->
 
 </body>
 </html>
