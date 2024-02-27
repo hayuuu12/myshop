@@ -1188,3 +1188,28 @@ ul.pddetail .pdtitle{
 #detail p{
     font-size: 14px;
 }
+
+/*######################### max-width 768px #############################*/
+@media (max-width: 768px){
+    .img-thumb-box{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .img-thumb-box img{
+        margin: 0 13px 15px 0;
+    }
+    .cartview.mcartview{
+        display: none !important;
+    }
+    .btn-line.btn-left, .btn-line.btn-right{
+        width: 100%;
+        display: inline-block;
+        border: 1px solid var(--gray-dark-color);
+        margin-top: 15px;
+        padding: 15px;
+        transition: all 300ms;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+}
